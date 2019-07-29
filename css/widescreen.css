@@ -1,0 +1,20 @@
+/* Align icon to left */
+#what .items .item {
+  display: flex;
+  text-align: left;
+}
+
+/* Position icon */
+#what .items .item i {
+  margin-right: 1.3rem;
+  align-self: center; /* to put the black icon in the middle of the green circle. By default it has some margin-bottom from when it was placed on the top so clear that with: */
+  margin-bottom: 0;
+}
+
+#contact .map, #contact .contact-form {
+  flex: 1;
+}
+
+#contact .map {
+  flex: 2; /* the map is now twice as wide as the form when the screensize >= 1100. Below 1100 it gets back to flex: 1; so they will be even again. */
+}

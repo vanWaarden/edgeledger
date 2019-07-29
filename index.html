@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <!-- the stylesheets links have to be included in this order, otherwise the styles from styles.css are gonna override the other ones: -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+  <link rel="stylesheet" media="screen and (min-width: 1100px)" href="css/widescreen.css">
+  <title>EdgeLedger Financial | Accounting & Investment</title>
+</head>
+<body id="home">
+  <!-- Navbar -->
+  <nav id="navbar">
+    <h1 class="logo">
+      <span class="text-primary">
+        <i class="fas fa-book-open"></i> Edge</span>Ledger <!-- the space before Edge moves it over a bit-->
+    </h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#what">What</a></li>
+      <li><a href="#who">Who</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Brad basically builds all his websites starting with a nav, then header and then sections. He works a lot with basic utility classes. So he basically builds his own framework with classes which can be used over and over again. He takes a lot of these classes from Bootstrap.  -->
+
+  <!-- Header: Showcase -->
+  <header id="showcase">
+    <div class="showcase-content"> <!-- to wrap all the content in this div as a flex container-->
+      <h1 class="l-heading"> <!-- large heading utility class -->
+        The Sky Is The Limit
+      </h1>
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptatibus debitis praesentium inventore, eum deserunt. <!-- type lorem15 to get 15 words in the paragraph -->
+      </p>
+      <a href="#what" class="btn">Read More</a> <!-- #what takes them to the what we do section -->
+    </div>
+  </header>
+
+  <!-- Section: What We Do -->
+  <section id="what" class="bg-light py-1"> <!-- py = padding on the y axis (top and bottom) -->
+    <div class="container"> <!-- to let the content stay in the middle -->
+      <h2 class="m-heading text-center"><span class="text-primary">What</span> We Do</h2>
+      <div class="items"> <!-- flex-container -->
+        <!-- the three flex items: -->
+        <div class="item"> 
+          <i class="fas fa-university fa-2x"></i> <!-- i = for icon, .fas = class fontawesome, fa-2x = to increase it -->
+          <div>
+            <h3>Investment Banking</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatum!</p>
+          </div>
+        </div>
+        <div class="item">
+            <i class="fas fa-book-reader fa-2x"></i>
+            <div>
+              <h3>Portfolio Management</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatum!</p>
+            </div>
+        </div>
+        <div class="item">
+            <i class="fas fa-pencil-alt fa-2x"></i>
+            <div>
+              <h3>Tax & Custodial</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatum!</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Who We Are -->
+  <section id="who"> <!-- section itself is going to be the flex-box because this section is going to go all the way to the edge so there is no need to use a container -->
+    <div class="who-img"></div> <!-- no content, just the image -->
+    <div class="who-text bg-dark p-2"> <!-- p-2 is going to have padding all around -->
+      <h2 class="m-heading"><span class="text-primary">Who</span> We Are</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa harum voluptas ratione enim consequuntur illo, atque, aut doloribus unde repellendus sit delectus beatae aspernatur placeat corrupti. Ipsa, itaque quas.</p>
+      <h3>Our Team</h3>
+      <ul class="list">
+        <li>Mark Smith: CEO</li>
+        <li>Shannon Johnson: CFO</li>
+        <li>Sandra Corbit: Senior Accountant</li>
+        <li>Janet Williams: Investment Manager</li>
+        <li>Kara Jackson: Senior Accountant</li>
+        <li>John Corbit: Lead Accountant</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section: Clients -->
+  <section id="clients" class="py-1">
+    <div class="container"> <!-- to move everything to the middle -->
+      <h2 class="m-heading text-center">
+        <span class="text-primary">Our</span> Clients
+      </h2>
+      <div class="items py-1"> <!-- flex container -->
+        <div><img src="./img/logos/logo1.png" alt="Client"></div> <!-- the divs are the flex items -->
+        <div><img src="./img/logos/logo2.png" alt="Client"></div>
+        <div><img src="./img/logos/logo3.png" alt="Client"></div>
+        <div><img src="./img/logos/logo4.png" alt="Client"></div>
+        <div><img src="./img/logos/logo5.png" alt="Client"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Contact -->
+  <section id="contact"> <!-- is going to be the flex container -->
+    <div class="contact-form bg-primary p-2">
+      <h2 class="m-heading">Contact Us</h2>
+      <p>Please use the form below to contact us</p>
+      <form action="process.php" method="POST"> <!-- submit it to process.php file -->
+        <div class="form-group"> <!-- to wrap the label and the input -->
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Enter Message"></textarea>
+        </div>
+        <input type="submit" value="Send" class="btn btn-dark">
+      </form>
+    </div>
+    <div class="map"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="bg-dark text-center py-1">
+    <div class="container"> <!-- so it stays in the container -->
+      <p> Built by <a href="https://github.com/vanWaarden/" target="_blank" class="footer-link"> Maaike van Waarden</a> during the Udemy course <a href="https://www.udemy.com/course/modern-html-css-from-the-beginning/" target="_blank" class="footer-link"> Modern HTML & CSS From The Beginning (Including Sass)</a><br> Copyright &copy; 2019 by Brad Traversy. EdgeLedger, All Rights Reserved </p>
+    </div>
+  </footer>
+
+  <!-- JQuery CDN -->
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
+
+    <!-- JQuery CDN -->
+    <!-- you have to put this before normal js script because in our js file we will use jQuery and other wise it wont be recognized -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <!-- Local JS File -->
+  <script src="js/main.js"></script>
+
+  <!-- Google Maps -->
+  <!-- initMap is a function. It stands for initialize Map. This script is placed after the main.js script but because in this script Google uses async defer. Thats why this script can be down here and still use it in the main.js -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk0vnYU9jsoVvCSMnqcPuryt1EsBdh0Mc&callback=initMap" 
+  async defer></script>
+</body>
+</html>
+
+<!-- AIzaSyCk0vnYU9jsoVvCSMnqcPuryt1EsBdh0Mc -->

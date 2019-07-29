@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+/* Utility Classes */
+.container { /* Brad Traversy says we want containers to retrict to a certain width */
+  max-width: 1100px; /* why not use relative sizing */
+  margin: auto; /* to make sure it aligns in the middle */
+  padding: 0 2rem; /* why not use a utility class for the padding? */
+  overflow: hidden;
+}
+
+.text-center {
+  text-align:center;
+}
+
+.text-primary {
+  color: #93cb52;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+.bg-primary {
+  background: #93cb52;
+  color: #fff;
+}
+
+.l-heading {
+  font-size: 4rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.m-heading {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.py-1 { padding: 1.5rem 0; }
+.py-2 { padding: 2rem 0; }
+.py-3 { padding: 3rem 0; }
+
+.p-1 { padding: 1.5rem; }
+.p-2 { padding: 2rem; }
+.p-3 { padding: 3rem; }
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: #93cb52;
+  padding: 0.7rem 2rem;
+  border: none; /* for if this class is used on a button (not a link) its going to have a border */
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #7ab436;
+  box-shadow: 5px 10px 18px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background: rgb(86,86,86);
+  color: #fff;
+}
+
+.btn-dark:active {
+  background: #7ab436;
+  color: #fff;
+}
+/* no hover state for this one? */
+
+/* list below as a utility class because we might want to use this list styling somewhere else. He doesnt think its a good idea to style it in the #who */
+.list {
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: #444 dotted 1px;
+}
+
+/* Navbar */
+#navbar {
+  display: flex; /* only the direct children (h1 + ul are the flex-items. What is in those children is irrelevant*/
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top:0; /* where it needs to stick, so at the top */
+  background: #333;
+  color: #fff;
+  justify-content: space-between;
+  z-index: 1; /* so the sticky navbar is always on top of everything */ 
+  padding: 1rem; /* 1rem = 16px because it isnt set in the root html fontsize */
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center; /* also center aligns the logo on the cross axis */
+  list-style: none;
+}
+
+#navbar ul li a {
+  color: #fff;
+  padding: 0.75rem; /* to add some space between the links */
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  background: #93cb52;
+  border-radius: 5px;
+}
+
+/* Showcase */
+#showcase {
+  background: #333 url('../img/showcase.jpg') no-repeat center center/cover;
+  height: 100vh; /* its going to be a little taller because it adds the height of the navbar as well. Could                   add a negative margin to pull it up a little bit */
+  color: #fff;
+}
+
+#showcase .showcase-content {
+  display: flex; /* as soon as you save this, it lines all the content horizontal because its default is                      flex row. */ 
+  flex-direction: column;
+  /* to make the content center: */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100%; /* as long as there is no height on the flex-container it will not center it. Height is                      100% of its container (showcase) which is 100vh. */
+  padding: 0 2rem;
+  /* Overlay */
+  position: absolute; /* to cover the entire showcase-content */
+  top: 65px; /* height of the navbar. Otherwise the bottom of the image wont be covered. If you dont set the bottom to 0 it will go too much down. If you set top 60px it will get a line between the navbar and the content. If you set it to 65px this line will dissapear. */
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4); /* alpha set to 1 is no transparency at all */
+}
+
+/* Section: What We Do */
+#what .items { /* better targetting it. Could also use only .items */ 
+  display: flex;
+  padding: 1rem;
+}
+
+#what .items .item {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+#what .items .item i {
+  background: #93cb52;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Section: Who We Are */
+#who {
+  display: flex;
+}
+
+#who div { 
+  flex: 1; /* any div thats inside the #who div, splits half in half (2 divs inside the #who div) */
+  flex-basis: 50%;
+}
+
+#who .who-img {
+  background: url('../img/people.jpg') no-repeat center center/cover;
+}
+
+/* Section: Clients */
+#clients .items {
+  display: flex;
+}
+
+#clients .items img {
+  display: block; /* to be able to add a width to them */
+  margin: auto; /* to place them right in the center of their div */
+  width: 60%; /* 60% of their div container */
+}
+
+/* Section: Contact */
+#contact {
+  display: flex;
+}
+
+#contact .map, #contact .contact-form {
+  flex: 1;
+  flex-basis: 50%; 
+}
+
+#contact .contact-form .form-group {
+  margin: 0.25rem;
+}
+
+#contact .contact-form label {
+  display: block; /* to be on top of the input */
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+  width: 100%;
+  padding: 1rem 0.5rem;
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus {
+  /* //outline-style: outset;*/
+  outline: unset;
+  border: none;
+  box-shadow: 5px 10px 18px rgba(0,0,0,0.6);
+}
+
+#main-footer .footer-link:link, .footer-link:visited{
+  color: #93cb52;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all .2s;
+  line-height: 1.9;
+  background-color: #333;
+}
+
+#main-footer .footer-link:hover, .footer-link:active{
+  color: #93cb52;
+  box-shadow: 0 1rem 1rem rgba(0,0,0, .4);
+  transform: rotate(2deg) scale(1.1);
+  line-height: 1.7rem;
+}
+
+#success{
+  height: calc(100vh - 9.95rem);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+#success .container{
+  /* margin: 4rem 0; */
+  padding: 5rem 0; 
+  
+}

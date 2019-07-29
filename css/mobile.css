@@ -1,0 +1,153 @@
+#what .items {
+  display: block; to stack the icons with the text on top of each other. This way clear the flex. 
+  /* flex-direction: column;  */
+  padding: 1rem;
+}
+
+/* Align icon to left of the text */
+#what .items .item {
+  display: flex;
+  text-align: left;
+}
+
+/* Position icon */
+#what .items .item i {
+  margin-right: 1.3rem;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+/* Smartphones */
+@media(max-width: 500px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navbar .logo {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  #navbar ul {
+    padding: -3rem;
+  }
+
+  #showcase .showcase-content {
+    margin-top: 0.3rem;
+    top: 90px;
+  }
+
+  #what .items .item {
+    padding: 0;
+  }
+
+  /* Position icon */
+  #what .items .item i {
+  margin-right: 2rem;
+}
+
+  /* font-size */
+  #what .items .item h3 {
+    font-size: 1rem;
+  }
+
+  #who {
+    display: block; /* removes the flex from the who id. because we want to remove the image so the're is no need for flex anymore */
+  }
+
+  #who .who-img {
+    display: none; /* to remove the image. The image doesnt have a height set so it will remove from the page */
+  }
+
+  #who .m-heading{
+    text-align: center;
+  }
+
+  #who p {
+    text-align: justify;
+  }
+
+
+  #clients .items img {
+    width: 80%;
+  }
+
+  #clients .items div:last-child {
+    display: none; /* last logo goed away */
+  }
+
+  #contact {
+    flex-direction: column; /* we cant see the map anymore now because its no longer attached to the form horizontally. To be able to see it again, it needs to have a height: (see below)*/
+  }
+
+  #contact .map {
+    height: 200px;
+    border-top: 4px solid #333;
+  }
+}
+
+@media(max-height: 568px) {
+  #showcase .showcase-content {
+    margin-top: -2rem; /* it will suck the content up and the button will be */
+    top: 140px; /* because of the margin negative, the overlay will nog cover the whole image anymore unless you set top: 140px */
+  }
+
+  .l-heading {
+    font-size: 3rem;
+  }
+
+  .lead { /* the <p> */
+    font-size: 1rem;
+  }
+}
+
+/* Notes from the teacher:
+
+COMMON ISSUES & FIXES
+Here are a couple things to mention and/or people have had issues with along with some fixes to try. They will be added to the videos in the next update.
+
+1. OVERLAY NOT GOING ALL THE WAY DOWN
+Make the #showcase
+
+position: relative;
+
+Make #showcase .showcase-content
+
+position:absolute;
+top:0;
+
+Make sure in your mobile media query, you remove the following or it will go outside the image
+
+  #showcase .showcase-content {
+    top: 110px;
+  }
+
+2. FLEX ITEMS NOT EVEN WHEN USING FLEX:1
+This is happening in the what and contact section
+
+"flex-basis" is used to set the initial size of a flex item. Try adding the following...
+
+#who div {
+  flex: 1;
+  flex-basis: 50%;
+}
+#contact .map, #contact .contact-form {
+  flex: 1;
+  flex-basis: 50%;
+}
+Helpful Link: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis
+
+3. GOOGLE MAP NOT DISPLAYING
+Unfortunately, the Google map API is not completely free anymore.  You do get a $200 credit, so you do not have to actually spend any money to use it in this course. I use maps all the time in tutorials and have still never been charged.
+
+More Info Here
+
+https://cloud.google.com/maps-platform/pricing/
+
+If you want to completely disregard the map, just fill that area with whatever you want such as an image, placeholder map, location info, etc..
+
+Sorry for not mentioning it in the video, I completely forgot they started charging For the Google APIs. I have had my credit card linked for a long time so I was not prompted and I have never been charged by Google for maps.
+
+It really sucks when free services decide to start charging people. I have run into this about 3 times in my courses.
+*/
